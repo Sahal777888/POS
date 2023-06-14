@@ -1,0 +1,73 @@
+<aside xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar" class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="index3.html" class="brand-link">
+        <img th:src="@{~/dist/img/star2.png}" alt="ADMIN" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Admin System 3</span>
+    </a>
+    <div class="sidebar" style="background-color:darkslateblue;">
+        <nav class="mt-2 ">
+            <ul class="nav nav-pills nav-sidebar "  >
+                <a th:href="@{~/}" class="nav-link" id="home-toggle">
+                    <i class="fas fa-home" align="left" ></i>
+                    <p style="font-weight: bold;">&nbsp;&nbsp;&nbsp;Home</p>
+                </a>
+            </ul>
+        </nav>
+        <nav class="mt-2" >
+            <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link " id="menu-toggle" style="background-color:#303030;">
+                        <i class="nav-icon fas fa-tag "></i>
+                        <p>
+                            Menu Utama
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/products}" class="nav-link" id="products-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Products</p>
+                            </a>
+                        </li>
+                        <!--
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/fakultas}" class="nav-link" id="fakultas-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Fakultas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/jurusan}" class="nav-link" id="jurusan-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data X</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/mahasiswa}" class="nav-link" id="mahasiswa-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data X</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/gedung}" class="nav-link" id="gedung-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data X</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{~/ruang}" class="nav-link" id="ruang-toggle">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data X</p>
+                            </a>
+                        </li>
+                        -->
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

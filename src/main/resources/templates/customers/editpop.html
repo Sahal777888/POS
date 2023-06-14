@@ -1,0 +1,84 @@
+<form th:action="@{~/customers/update}" method="post" id="form-input"
+      th:object="${data}"required>
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit Customer</h3>
+    </div>
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="*{id}">
+      <div class="form-group">
+        <label for="contactName">contactName</label>
+        <input id="contactName" type="text" th:field="*{contactName}"
+               th:class="${#fields.hasErrors('contactName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('contactName')}" class="error invalid-feedback"
+              th:errors="*{contactName}"></span>
+      </div>
+      <div class="form-group">
+        <label for="companyName">companyName</label>
+        <input id="companyName" type="text" th:field="*{companyName}"
+               th:class="${#fields.hasErrors('companyName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('companyName')}" class="error invalid-feedback"
+              th:errors="*{companyName}"></span>
+      </div>
+      <div class="form-group">
+        <label for="contactTitle">contactTitle</label>
+        <input id="contactTitle" type="text" th:field="*{contactTitle}"
+               th:class="${#fields.hasErrors('contactTitle')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('contactTitle')}" class="error invalid-feedback"
+              th:errors="*{contactTitle}"></span>
+      </div>
+      <div class="form-group">
+        <label for="address">address</label>
+        <input id="address" type="text" th:field="*{address}"
+               th:class="${#fields.hasErrors('address')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('address')}" class="error invalid-feedback"
+              th:errors="*{address}"></span>
+      </div>
+      <div class="form-group">
+        <label for="city">city</label>
+        <input id="city" type="text" th:field="*{city}"
+               th:class="${#fields.hasErrors('city')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('city')}" class="error invalid-feedback"
+              th:errors="*{city}"></span>
+      </div>
+      <div class="form-group">
+        <label for="region">region</label>
+        <input id="region" type="text" th:field="*{region}"
+               th:class="${#fields.hasErrors('region')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('region')}" class="error invalid-feedback"
+              th:errors="*{region}"></span>
+      </div>
+      <div class="form-group">
+        <label for="country">country</label>
+        <input id="country" type="text" th:field="*{country}"
+               th:class="${#fields.hasErrors('country')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('country')}" class="error invalid-feedback"
+              th:errors="*{country}"></span>
+      </div>
+      <div class="form-group">
+        <label for="postalCode">postalCode</label>
+        <input id="postalCode" type="number" th:field="*{postalCode}"
+               th:class="${#fields.hasErrors('postalCode')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('postalCode')}" class="error invalid-feedback"
+              th:errors="*{postalCode}"></span>
+      </div>
+      <div class="form-group">
+        <label for="phone">phone</label>
+        <input id="phone" type="number" th:field="*{phone}"
+               th:class="${#fields.hasErrors('phone')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('phone')}" class="error invalid-feedback"
+              th:errors="*{phone}"></span>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

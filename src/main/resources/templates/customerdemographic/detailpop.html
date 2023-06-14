@@ -1,0 +1,22 @@
+<form th:action="@{~/customerdemographic/save}" method="post">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <div class="card">
+            <div class="card-header text-light"
+                 style="background-color:darkslategrey;">
+                <h3 class="card-title">Detail customerdemographic</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group col-lg-12">
+                    <label for="customerDesc">customerDesc</label>
+                    <input readonly="readonly" class="form-control" type="text" name="customerDesc" id="customerDesc" th:value="${data.customerDesc}">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</form>

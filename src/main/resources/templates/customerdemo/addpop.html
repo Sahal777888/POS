@@ -1,0 +1,49 @@
+<form th:action="@{~/customerdemo/save}" method="post" id="form-input"
+      th:object="${data}" onsubmit="return validateForm()" name="myForm">
+    <div class="card p-0">
+        <div class="card-header text-light" style="background-color:rebeccapurple;">
+            <h3 class="card-title">Customer demo</h3>
+        </div>
+
+        <div class="card-body row">
+            <div class="col-md-6 col-lg-12">
+                <div class="card-body row">
+                    <div class="col-md-6 col-lg-12">
+                        <div class="form-group ">
+                            <label for="customerId">customer</label>
+                            <select id="customerId" th:field="*{customerId}"
+                                    th:class="${#fields.hasErrors('customerId')} ? 'form-control is-invalid': 'form-control'">
+                                <option value="">Select One</option>
+                                <option th:each="customer: ${customerList}" th:value="${customer.id}"
+                                        th:text="${customer.contactName}"
+                                        th:selected="${customer.id == data.customerId}">Select One</option>
+                            </select>
+                            <span th:if="${#fields.hasErrors('customerId')}" class="error invalid-feedback"
+                                  th:errors="*{customerId}"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label for="customerDemographicId">customerDemographic</label>
+                            <select id="customerDemographicId" th:field="*{customerDemographicId}"
+                                    th:class="${#fields.hasErrors('customerDemographicId')} ? 'form-control is-invalid': 'form-control'">
+                                <option value="">Select One</option>
+                                <option th:each="customerDemographic: ${customerDemographicList}" th:value="${customerDemographic.id}"
+                                        th:text="${customerDemographic.customerDesc}"
+                                        th:selected="${customerDemographic.id == data.customerDemographicId}">Select One</option>
+                            </select>
+                            <span th:if="${#fields.hasErrors('customerDemographicId')}" class="error invalid-feedback"
+                                  th:errors="*{customerDemographicId}"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+    </div>
+</form>

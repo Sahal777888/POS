@@ -1,0 +1,51 @@
+<form th:action="@{~/orderdetails/save}" method="post">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <div class="card">
+            <div class="card-header text-light"
+                 style="background-color:darkslategrey;">
+                <h3 class="card-title">Detail orderdetails</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group col-lg-12">
+                    <label for="unitPrice">unitPrice</label>
+                    <input readonly="readonly" class="form-control" type="text" name="unitPrice" id="unitPrice" th:value="${data.unitPrice}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="quantity">quantity</label>
+                    <input readonly="readonly" class="form-control" type="text" name="quantity" id="quantity" th:value="${data.quantity}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="discount">discount</label>
+                    <input readonly="readonly" class="form-control" type="text" name="discount" id="discount" th:value="${data.discount}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="product">product</label>
+                    <input readonly="readonly" class="form-control" type="text" name="data.product.name"
+                           id="product" th:value="${data.product.name}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="order">order</label>
+                    <input readonly="readonly" class="form-control" type="text" name="data.order.name"
+                           id="order" th:value="${data.order.name}">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                    <!--
+                    <div class="col-sm-8">
+                        <button onclick="window.print()" class="btn btn-info float-left">
+                            <i class="fas fa-clipboard-check">&nbsp;&nbsp;&nbsp;Print/Save Pdf</i></button>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <a th:href="@{~/fakultas}" class="btn btn-primary float-right">
+                            <i class="fas fa-backward">&nbsp;&nbsp;&nbsp;Kembali</i></a>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</form>

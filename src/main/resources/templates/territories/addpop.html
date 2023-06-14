@@ -1,0 +1,44 @@
+<form th:action="@{~/territories/save}" method="post" id="form-input"
+th:object="${data}" onsubmit="return validateForm()" name="myForm">
+    <div class="card p-0">
+        <div class="card-header text-light" style="background-color:rebeccapurple;">
+            <h3 class="card-title">territory Baru</h3>
+        </div>
+
+        <div class="card-body row">
+            <div class="col-md-6 col-lg-12">
+                <div class="card-body row">
+                    <div class="col-md-6 col-lg-12">
+                        <div class="form-group">
+                            <label for="territoryDesc">Territories desc</label>
+                            <input id="territoryDesc" type="text" th:field="*{territoryDesc}"
+                                   th:class="${#fields.hasErrors('territoryDesc')} ? 'form-control is-invalid': 'form-control'">
+                            <span th:if="${#fields.hasErrors('territoryDesc')}" class="error invalid-feedback"
+                                  th:errors="*{territoryDesc}"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label for="regionId">Region</label>
+                            <select id="regionId" th:field="*{regionId}"
+                                    th:class="${#fields.hasErrors('regionId')} ? 'form-control is-invalid': 'form-control'">
+                                <option value="">Select One</option>
+                                <option th:each="region: ${regionList}" th:value="${region.id}"
+                                        th:text="${region.contactName}"
+                                        th:selected="${region.id == data.regionId}">Select One</option>
+                            </select>
+                            <span th:if="${#fields.hasErrors('regionId')}" class="error invalid-feedback"
+                                  th:errors="*{regionId}"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+    </div>
+</form>

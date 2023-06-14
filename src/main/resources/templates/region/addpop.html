@@ -1,0 +1,27 @@
+<form th:action="@{~/region/save}" method="post" id="form-input"
+      th:object="${data}" >
+    <div class="card p-0">
+        <div class="card-header text-light" style="background-color:rebeccapurple;">
+            <h3 class="card-title">region Baru</h3>
+        </div>
+
+        <div class="card-body row">
+            <div class="col-md-6 col-lg-12">
+                <div class="card-body row">
+                        <div class="form-group">
+                            <label for="contactName">Nama region</label>
+                            <input id="contactName" type="text" th:field="*{contactName}"
+                                   th:class="${#fields.hasErrors('contactName')} ? 'form-control is-invalid': 'form-control'">
+                            <span th:if="${#fields.hasErrors('contactName')}" class="error invalid-feedback"
+                                  th:errors="*{contactName}"></span>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+    </div>
+</form>

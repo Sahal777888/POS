@@ -1,0 +1,50 @@
+<form th:action="@{~/suppliers/save}" method="post">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <div class="card">
+            <div class="card-header text-light"
+                 style="background-color:darkslategrey;">
+                <h3 class="card-title">Detail suppliers</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group col-lg-12">
+                    <label for="companyName">companyName</label>
+                    <input readonly="readonly" class="form-control" type="text" name="companyName" id="companyName" th:value="${data.companyName}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="contactName">contactName</label>
+                    <input readonly="readonly" class="form-control" type="text" name="contactName" id="contactName" th:value="${data.contactName}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="contactTitle">contactTitle</label>
+                    <input readonly="readonly" class="form-control" type="text" name="contactTitle" id="contactTitle" th:value="${data.contactTitle}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="address">address</label>
+                    <input readonly="readonly" class="form-control" type="text" name="address" id="address" th:value="${data.address}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="city">city</label>
+                    <input readonly="readonly" class="form-control" type="text" name="city" id="city" th:value="${data.city}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="region">region</label>
+                    <input readonly="readonly" class="form-control" type="text" name="region" id="region" th:value="${data.region}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="postalCode">postalCode</label>
+                    <input readonly="readonly" class="form-control" type="text" name="postalCode" id="postalCode" th:value="${data.postalCode}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="country">country</label>
+                    <input readonly="readonly" class="form-control" type="text" name="country" id="country" th:value="${data.country}">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</form>

@@ -1,0 +1,93 @@
+<form th:action="@{~/products/save}" method="post" id="form-input"
+      th:object="${data}" onsubmit="return validateForm()" name="myForm">
+    <div class="card p-0">
+        <div class="card-header text-light" style="background-color:rebeccapurple;">
+            <h3 class="card-title">region Baru</h3>
+        </div>
+        <div class="col-md-6 col-lg-12">
+            <div class="card-body row">
+                <div class="col-md-6 col-lg-12">
+                    <div class="form-group">
+                        <label for="name">name</label>
+                        <input id="name" type="text" th:field="*{name}"
+                               th:class="${#fields.hasErrors('name')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('name')}" class="error invalid-feedback"
+                              th:errors="*{name}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantityPerUnit">quantityPerUnit</label>
+                        <input id="quantityPerUnit" type="text" th:field="*{quantityPerUnit}"
+                               th:class="${#fields.hasErrors('quantityPerUnit')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('quantityPerUnit')}" class="error invalid-feedback"
+                              th:errors="*{quantityPerUnit}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="unitPrice">unitPrice</label>
+                        <input id="unitPrice" type="text" th:field="*{unitPrice}"
+                               th:class="${#fields.hasErrors('unitPrice')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('unitPrice')}" class="error invalid-feedback"
+                              th:errors="*{unitPrice}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="unitsOnOrder">unitsOnOrder</label>
+                        <input id="unitsOnOrder" type="text" th:field="*{unitsOnOrder}"
+                               th:class="${#fields.hasErrors('unitsOnOrder')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('unitsOnOrder')}" class="error invalid-feedback"
+                              th:errors="*{unitsOnOrder}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="unitsInStock">unitsInStock</label>
+                        <input id="unitsInStock" type="text" th:field="*{unitsInStock}"
+                               th:class="${#fields.hasErrors('unitsInStock')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('unitsInStock')}" class="error invalid-feedback"
+                              th:errors="*{unitsInStock}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reorderLevel">reorderLevel</label>
+                        <input id="reorderLevel" type="text" th:field="*{reorderLevel}"
+                               th:class="${#fields.hasErrors('reorderLevel')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('reorderLevel')}" class="error invalid-feedback"
+                              th:errors="*{reorderLevel}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="discontinued">discontinued</label>
+                        <input id="discontinued" type="text" th:field="*{discontinued}"
+                               th:class="${#fields.hasErrors('discontinued')} ? 'form-control is-invalid': 'form-control'">
+                        <span th:if="${#fields.hasErrors('discontinued')}" class="error invalid-feedback"
+                              th:errors="*{discontinued}"></span>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="categoryId">categoryId</label>
+                        <select id="categoryId" th:field="*{categoryId}"
+                                th:class="${#fields.hasErrors('categoryId')} ? 'form-control is-invalid': 'form-control'">
+                            <option value="">Select One</option>
+                            <option th:each="category: ${categoryList}" th:value="${category.id}"
+                                    th:text="${category.categoryName}"
+                                    th:selected="${category.id == data.categoryId}">Select One</option>
+                        </select>
+                        <span th:if="${#fields.hasErrors('categoryId')}" class="error invalid-feedback"
+                              th:errors="*{categoryId}"></span>
+                    </div>
+                    <div class="form-group ">
+                        <label for="supplierId">supplierId</label>
+                        <select id="supplierId" th:field="*{supplierId}"
+                                th:class="${#fields.hasErrors('supplierId')} ? 'form-control is-invalid': 'form-control'">
+                            <option value="">Select One</option>
+                            <option th:each="supplier: ${supplierList}" th:value="${supplier.id}"
+                                    th:text="${supplier.companyName}"
+                                    th:selected="${supplier.id == data.supplierId}">Select One</option>
+                        </select>
+                        <span th:if="${#fields.hasErrors('supplierId')}" class="error invalid-feedback"
+                              th:errors="*{supplierId}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,97 @@
+<form th:action="@{~/employees/update}" method="post" id="form-input"
+      th:object="${data}" required>
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit employees</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="*{id}">
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input id="firstName" type="text" th:field="*{firstName}"
+               th:class="${#fields.hasErrors('firstName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('firstName')}" class="error invalid-feedback"
+              th:errors="*{firstName}"></span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input id="lastName" type="text" th:field="*{lastName}"
+               th:class="${#fields.hasErrors('lastName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('lastName')}" class="error invalid-feedback"
+              th:errors="*{lastName}"></span>
+      </div>
+<!--
+      <div class="form-group ">
+        <label for="reportId">report</label>
+        <select id="reportId" th:field="*{reportId}"
+                th:class="${#fields.hasErrors('reportId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="report: ${reportList}" th:value="${report.id}"
+                  th:text="${report.firstName}"
+                  th:selected="${report.id == data.reportId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('reportId')}" class="error invalid-feedback"
+              th:errors="*{reportId}"></span>
+      </div>-->
+
+      <div class="form-group">
+        <label for="title">title</label>
+        <input id="title" type="text" th:field="*{title}"
+               th:class="${#fields.hasErrors('title')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('title')}" class="error invalid-feedback"
+              th:errors="*{title}"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="birthDate">birthDate</label>
+        <input id="birthDate" type="date" th:field="*{birthDate}"
+               th:class="${#fields.hasErrors('birthDate')} ? 'form-control is-invalid': 'form-control'"
+        >
+        <span th:if="${#fields.hasErrors('birthDate')}" class="error invalid-feedback"
+              th:errors="*{birthDate}"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="hireDate">hireDate</label>
+        <input id="hireDate" type="date" th:field="*{hireDate}"
+               th:class="${#fields.hasErrors('hireDate')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('hireDate')}" class="error invalid-feedback"
+              th:errors="*{hireDate}"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="city">city</label>
+        <input id="city" type="text" th:field="*{city}"
+               th:class="${#fields.hasErrors('city')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('city')}" class="error invalid-feedback"
+              th:errors="*{city}"></span>
+      </div>
+      <div class="form-group">
+        <label for="region">region</label>
+        <input id="region" type="text" th:field="*{region}"
+               th:class="${#fields.hasErrors('region')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('region')}" class="error invalid-feedback"
+              th:errors="*{region}"></span>
+      </div>
+      <div class="form-group">
+        <label for="photoPath">photoPath</label>
+        <input id="photoPath" type="text" th:field="*{photoPath}"
+               th:class="${#fields.hasErrors('photoPath')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('photoPath')}" class="error invalid-feedback"
+              th:errors="*{photoPath}"></span>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,146 @@
+<form th:action="@{~/orders/update}" method="post" id="form-input"
+      th:object="${data}">
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit orders</h3>
+    </div>
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="*{id}">
+      <!--<div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" th:field="*{name}"
+               th:class="${#fields.hasErrors('name')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('name')}" class="error invalid-feedback"
+              th:errors="*{name}"></span>
+      </div>-->
+
+      <div class="form-group">
+        <label for="orderDate">orderDate</label>
+        <input id="orderDate" type="date" th:field="*{orderDate}"
+               th:class="${#fields.hasErrors('orderDate')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('orderDate')}" class="error invalid-feedback"
+              th:errors="*{orderDate}"></span>
+      </div>
+      <div class="form-group">
+        <label for="requiredDate">requiredDate</label>
+        <input id="requiredDate" type="date" th:field="*{requiredDate}"
+               th:class="${#fields.hasErrors('requiredDate')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('requiredDate')}" class="error invalid-feedback"
+              th:errors="*{requiredDate}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shippedDate">shippedDate</label>
+        <input id="shippedDate" type="date" th:field="*{shippedDate}"
+               th:class="${#fields.hasErrors('shippedDate')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shippedDate')}" class="error invalid-feedback"
+              th:errors="*{shippedDate}"></span>
+      </div>
+
+
+      <div class="form-group">
+        <label for="shipVia">shipVia</label>
+        <input id="shipVia" type="number" th:field="*{shipVia}"
+               th:class="${#fields.hasErrors('shipVia')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipVia')}" class="error invalid-feedback"
+              th:errors="*{shipVia}"></span>
+      </div>
+      <div class="form-group">
+        <label for="freight">freight</label>
+        <input id="freight" type="number" th:field="*{freight}"
+               th:class="${#fields.hasErrors('freight')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('freight')}" class="error invalid-feedback"
+              th:errors="*{freight}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shipName">shipName</label>
+        <input id="shipName" type="text" th:field="*{shipName}"
+               th:class="${#fields.hasErrors('shipName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipName')}" class="error invalid-feedback"
+              th:errors="*{shipName}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shipAddress">shipAddress</label>
+        <input id="shipAddress" type="text" th:field="*{shipAddress}"
+               th:class="${#fields.hasErrors('shipAddress')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipAddress')}" class="error invalid-feedback"
+              th:errors="*{shipAddress}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shipCity">shipCity</label>
+        <input id="shipCity" type="text" th:field="*{shipCity}"
+               th:class="${#fields.hasErrors('shipCity')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipCity')}" class="error invalid-feedback"
+              th:errors="*{shipCity}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shipRegion">shipRegion</label>
+        <input id="shipRegion" type="text" th:field="*{shipRegion}"
+               th:class="${#fields.hasErrors('shipRegion')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipRegion')}" class="error invalid-feedback"
+              th:errors="*{shipRegion}"></span>
+      </div>
+      <div class="form-group">
+        <label for="shipPostalCode">shipPostalCode</label>
+        <input id="shipPostalCode" type="number" th:field="*{shipPostalCode}"
+               th:class="${#fields.hasErrors('shipPostalCode')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipPostalCode')}" class="error invalid-feedback"
+              th:errors="*{shipPostalCode}"></span>
+      </div>
+      <div class="form-group">
+        <label for="name">shipCountry</label>
+        <input id="shipCountry" type="text" th:field="*{shipCountry}"
+               th:class="${#fields.hasErrors('shipCountry')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('shipCountry')}" class="error invalid-feedback"
+              th:errors="*{shipCountry}"></span>
+      </div>
+
+      <div class="form-group ">
+        <label for="employeeId">Employee</label>
+        <select id="employeeId" th:field="*{employeeId}"
+                th:class="${#fields.hasErrors('employeeId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="employee: ${employeeList}" th:value="${employee.id}"
+                  th:text="${employee.firstName}"
+                  th:selected="${employee.id == data.employeeId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('employeeId')}" class="error invalid-feedback"
+              th:errors="*{employeeId}"></span>
+      </div>
+      <div class="form-group ">
+        <label for="shipperId">shipper</label>
+        <select id="shipperId" th:field="*{shipperId}"
+                th:class="${#fields.hasErrors('shipperId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="shipper: ${shipperList}" th:value="${shipper.id}"
+                  th:text="${shipper.companyName}"
+                  th:selected="${shipper.id == data.shipperId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('shipperId')}" class="error invalid-feedback"
+              th:errors="*{shipperId}"></span>
+      </div>
+      <div class="form-group ">
+        <label for="customerId">customer</label>
+        <select id="customerId" th:field="*{customerId}"
+                th:class="${#fields.hasErrors('customerId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="customer: ${customerList}" th:value="${customer.id}"
+                  th:text="${customer.contactName}"
+                  th:selected="${customer.id == data.customerId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('customerId')}" class="error invalid-feedback"
+              th:errors="*{customerId}"></span>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

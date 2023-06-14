@@ -1,0 +1,30 @@
+<form th:action="@{~/region/update}" method="post" id="form-input"
+      th:object="${data}">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit region</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="id" th:field="*{id}">
+
+      <div class="form-group col-lg-12">
+        <label for="contactName">Nama region</label>
+        <input id="contactName" type="text" th:field="*{contactName}"
+               th:class="${#fields.hasErrors('contactName')} ? 'form-control is-invalid': 'form-control'"
+                th:value="${data.contactName}">
+        <span th:if="${#fields.hasErrors('contactName')}" class="error invalid-feedback"
+              th:errors="*{contactName}"></span>
+      </div>
+
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

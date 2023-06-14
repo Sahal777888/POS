@@ -1,0 +1,44 @@
+<form th:action="@{~/categories/update}" method="post" id="form-input"
+      th:object="${data}" required>
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit categories</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="${data.id}">
+
+      <div class="form-group">
+        <label for="categoryName">categoryName</label>
+        <input id="categoryName" type="text" th:field="*{categoryName}" th:value="*{categoryName}"
+               th:class="${#fields.hasErrors('categoryName')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('categoryName')}" class="error invalid-feedback"
+              th:errors="*{categoryName}"></span>
+      </div>
+      <div class="form-group">
+        <label for="categoryDesc">categoryDesc</label>
+        <input id="categoryDesc" type="text" th:field="*{categoryDesc}"
+               th:class="${#fields.hasErrors('categoryDesc')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('categoryDesc')}" class="error invalid-feedback"
+              th:errors="*{categoryDesc}"></span>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+        <!--
+        <div class="col-sm-4">
+          <a th:href="@{~/fakultas}" class="btn btn-warning float-right" >
+            <i class="fas fa-backward">&nbsp;&nbsp;&nbsp;Kembali</i></a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</form>

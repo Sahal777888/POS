@@ -1,0 +1,28 @@
+<form  th:action="@{~/customerdemographic/update}" method="post" id="form-input"
+       th:object="${data}"required >
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit customerdemographic</h3>
+    </div>
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="*{id}">
+      <div class="form-group">
+        <label for="customerDesc">customerDesc</label>
+        <input id="customerDesc" type="text" th:field="*{customerDesc}"
+               th:class="${#fields.hasErrors('customerDesc')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('customerDesc')}" class="error invalid-feedback"
+              th:errors="*{customerDesc}"></span>
+      </div>
+
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

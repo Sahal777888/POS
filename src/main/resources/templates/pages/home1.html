@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+  <div class="col-sm-6">
+    <h1 class="m-0">Database Universitas</h1>
+  </div><!-- /.col -->
+  <div class="col-sm-6">
+    <!--
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a th:href="@{~/home}">Home</a></li>
+        <li class="breadcrumb-item active">Fakultas</li>
+    </ol>
+    -->
+  </div><!-- /.col -->
+</div><!-- /.row -->
+<div class="row-lg" layout:fragment="content" id="tabel-utama">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <!-- card mulai -->
+    <div class="card">
+      <!-- header -->
+      <div class="card-header bg-success">
+        <h2 class="card-title"><span style="font-size:30px;"><i class="fas fa-home"></i>
+                    &nbsp;&nbsp;&nbsp;Home </span></h2>
+      </div>
+    </div>
+    <div class="card-body" style="font-size: 30px;">
+      <div class="row">
+
+        <div class ="col-1"></div>
+
+        <div class="col-4">
+          <a th:href="@{~/categories}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data categories</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/products}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data products</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/suppliers}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data suppliers</span>
+              </div>
+            </div>
+          </a>
+
+
+          <a th:href="@{~/orderdetails}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data orderdetails</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/customers}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data customers</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/customerdemo}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data customerdemo</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/customerdemographic}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data customerdemographic</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class ="col-1"></div>
+
+        <div class ="col-4">
+          <a th:href="@{~/orders}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data orders</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/shippers}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data shippers</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/usastate}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data usastate</span>
+              </div>
+            </div>
+          </a>
+
+
+
+          <a th:href="@{~/employees}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data employees</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/employeeterritories}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data employeeterritories</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/territories}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data territories</span>
+              </div>
+            </div>
+          </a>
+          <a th:href="@{~/region}">
+            <div class="info-box mb-2 btn btn-primary text-dark" >
+              <span class="info-box-icon"><i class="fas fa-archway"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text " style="font-size: 25px;">Data region</span>
+              </div>
+            </div>
+          </a>
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+</div>
+
+<!--
+$(document).ready(function(){
+    var z = ${datax};
+    if(z==2}){
+      $.ajax({
+        url:"@{~/gedung}",
+        dataType: 'HTML',
+        method: 'GET',
+        success: function (result){
+          $('#tabel-utama').html(result);
+          $("#tabel-utama").show();
+        }
+      })
+      }
+    });
+-->
+<script layout:fragment="client-script">
+
+      $.ajax({
+        url:"~/gedung/indexajax.html",
+        dataType: 'HTML',
+        method: 'GET',
+        success: function (result){
+          $('#tabel-utama').html(result);
+          $("#tabel-utama").show();
+        }
+      })
+
+
+  $("#gedung-toggle").on("click", function (e){
+      e.preventDefault();
+      var url = $(this).attr('href');
+      $.ajax({
+        url:url,
+        dataType: 'HTML',
+        method: 'GET',
+        success: function (result){
+          $('#tabel-utama').html(result);
+          $("#tabel-utama").show();
+        }
+      })
+    })
+    $("#gedung-toggle").on("click", function (e){
+      e.preventDefault();
+      var url = $(this).attr('href');
+      $.ajax({
+        url:url,
+        dataType: 'HTML',
+        method: 'GET',
+        success: function (result){
+          $('#tabel-utama').html(result);
+          $("#tabel-utama").show();
+        }
+      })
+    })
+    $(document).ready(function(){
+
+    });
+
+    $(document).ready(function(){
+        $("#fakultas-toggle").removeClass('active');
+        $("#home-toggle").addClass('active');
+        $("#mahasiswa-toggle").removeClass('active');
+        $("#jurusan-toggle").removeClass('active');
+        $("#gedung-toggle").removeClass('active');
+        $("#ruang-toggle").removeClass('active');
+    });
+
+    $('[data-widget="pushmenu"]').PushMenu('collapse');
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<form th:action="@{~/categories/save}" method="post">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <div class="card">
+            <div class="card-header text-light"
+                 style="background-color:darkslategrey;">
+                <h3 class="card-title">Detail categories</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group col-lg-12">
+                    <label for="name">Nama</label>
+                    <input readonly="readonly" class="form-control" type="text" name="contactName" id="name" th:value="${data.categoryName}">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="categoryDesc">categoryDesc</label>
+                    <input readonly="readonly" class="form-control" type="text" name="categoryDesc" id="categoryDesc" th:value="${data.categoryDesc}">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                    <!--
+                    <div class="col-sm-8">
+                        <button onclick="window.print()" class="btn btn-info float-left">
+                            <i class="fas fa-clipboard-check">&nbsp;&nbsp;&nbsp;Print/Save Pdf</i></button>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <a th:href="@{~/fakultas}" class="btn btn-primary float-right">
+                            <i class="fas fa-backward">&nbsp;&nbsp;&nbsp;Kembali</i></a>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</form>

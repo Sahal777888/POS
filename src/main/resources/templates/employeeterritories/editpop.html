@@ -1,0 +1,63 @@
+<form th:action="@{~/employeeterritories/update}" method="post" id="form-input"
+      th:object="${data}">
+  <div class="card">
+    <div class="card-header text-light"
+         style="background-color:darkslategrey;">
+      <h3 class="card-title">Edit employeeterritories</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="id" th:value="*{id}">
+      <!--
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" th:field="*{name}" th:value="*{name}"
+               th:class="${#fields.hasErrors('name')} ? 'form-control is-invalid': 'form-control'">
+        <span th:if="${#fields.hasErrors('name')}" class="error invalid-feedback"
+              th:errors="*{name}"></span>
+      </div>-->
+      <div class="form-group ">
+        <label for="territoryId">Territories</label>
+        <select id="territoryId" th:field="*{territoryId}"
+                th:class="${#fields.hasErrors('territoryId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="territory: ${territoryList}" th:value="${territory.id}"
+                  th:text="${territory.territoryDesc}"
+                  th:selected="${territory.id == data.territoryId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('territoryId')}" class="error invalid-feedback"
+              th:errors="*{territoryId}"></span>
+      </div>
+      <div class="form-group ">
+        <label for="employeeId">Employee</label>
+        <select id="employeeId" th:field="*{employeeId}"
+                th:class="${#fields.hasErrors('employeeId')} ? 'form-control is-invalid': 'form-control'">
+          <option value="">Select One</option>
+          <option th:each="employee: ${employeeList}" th:value="${employee.id}"
+                  th:text="${employee.firstName}"
+                  th:selected="${employee.id == data.employeeId}">Select One</option>
+        </select>
+        <span th:if="${#fields.hasErrors('employeeId')}" class="error invalid-feedback"
+              th:errors="*{employeeId}"></span>
+      </div>
+
+
+
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-success float-left" >
+            <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Simpan</button>
+        </div>
+        <!--
+        <div class="col-sm-4">
+          <a th:href="@{~/fakultas}" class="btn btn-warning float-right" >
+            <i class="fas fa-backward">&nbsp;&nbsp;&nbsp;Kembali</i></a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</form>
